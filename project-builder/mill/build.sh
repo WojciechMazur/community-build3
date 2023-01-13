@@ -41,4 +41,4 @@ function tryBuild() {
   $mill ${millSettings[@]} runCommunityBuild "$scalaVersion" "${projectConfig}" "${targets[@]}"
 }
 
-tryBuild mill || [[ -f ./mill ]] && tryBuild ./mill
+tryBuild mill || ([[ -f ./mill ]] && tryBuild ./mill)
