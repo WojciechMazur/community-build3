@@ -469,6 +469,10 @@ def createGithubActionJob(
     |        type: string
     |        description: "GitHub repository branch for compiler to build, ignored when published-scala-version is defined"
     |        default: "main"
+    |      extra-scalac-options:
+    |        type: string
+    |        description: "List of scalacOptions which should be used when building projects. Multiple entires should be seperated by a single comma character `,`"
+    |        default: ""
     |jobs:
     |  $setupId:
     |    runs-on: ubuntu-22.04
@@ -511,6 +515,7 @@ def createGithubActionJob(
           println("  uses: ./.github/actions/build-project")
           println("  with:")
           println("    project-name: ${{ matrix.name }}")
+          println("    extra-scalac-options: $${{ inputs.extra-scalac-options }}")
           println(s"    scala-version: $${{ $setupOutputs.scala-version }}")
           println(s"    maven-repo-url: $${{ $setupOutputs.maven-repo-url }}")
           println("    elastic-user: ${{ secrets.OPENCB_ELASTIC_USER }}")

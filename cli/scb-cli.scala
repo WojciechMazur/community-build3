@@ -672,7 +672,9 @@ object MinikubeReproducer:
                   project.effectiveTargets.mkString(" "),
                   params.mavenRepositoryUrl,
                   params.enforcedSbtVersion.getOrElse("1.6.2"),
-                  params.config.getOrElse("{}")
+                  params.config.getOrElse("{}"),
+                  /* extra-scalac-options    = */"", 
+                  /* disabled-scalac-options = */""
                 )
               )
             ),
@@ -845,8 +847,8 @@ class LocalReproducer(using config: Config, build: BuildInfo):
     )(os.pwd)
     val logsFile = os.temp(prefix = s"cb-logs-build-project-${project.id}", deleteOnExit = false)
     val impl =
-      if os.exists(projectDir / "build.sbt") then SbtReproducer(projectDir, logsFile)
-      else if os.exists(projectDir / "build.sc") then MillReproducer(projectDir, logsFile)
+      if os.exists(projectDir / "build.sc") then MillReproducer(projectDir, logsFile)
+      else if os.exists(projectDir / "build.sbt") then SbtReproducer(projectDir, logsFile)
       else sys.error("Unsupported build tool")
     try
       val redirectMessage = if config.redirectLogs then s", logs redirected to $logsFile" else ""
