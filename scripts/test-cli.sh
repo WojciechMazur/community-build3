@@ -8,7 +8,7 @@ cd $scriptDir/../cli
 # Installation of scala-cli in the GH actions workflow was not very effective, and might have lead to missing binary on the PATH when executing this script
 
 testNamespace=scala3-community-build-test
-cliRunCmd="run scb-cli.scala --jvm=11 --java-prop communitybuild.version=test --java-prop communitybuild.local.dir=$scriptDir/..  -- "
+cliRunCmd="run scb-cli.scala --jvm=11 --java-prop communitybuild.version=test --java-prop communitybuild.forced-java-version=11 --java-prop communitybuild.local.dir=$scriptDir/..  -- "
 commonOpts="--namespace=$testNamespace --noRedirectLogs"
 sbtProject="typelevel/shapeless-3 --revision=v3.1.0"
 millProject="com-lihaoyi/os-lib --revision=0.8.1" 

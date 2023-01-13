@@ -244,7 +244,8 @@ object BuildInfo:
         case value            => Option(compact(render(value)))
       }
       plan = project.extract[ProjectBuildPlan].copy(config = configString)
-      jdkVersion = plan.config.map(parse(_) \ "java" \ "version").flatMap(_.extractOpt[String])
+      jdkVersion = sys.props.get("communitybuild.forced-java-version")
+        .orElse(plan.config.map(parse(_) \ "java" \ "version").flatMap(_.extractOpt[String]))
     yield ProjectInfo(
       id = jobId,
       params = BuildParameters(

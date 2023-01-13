@@ -22,6 +22,8 @@ jobs:
           scripts/build-all.sh test
 
       - name: Test build
+        env: 
+          BUILD_ONLY_DEFAULT_JDK: true
         run: scripts/test-build.sh
 
   test-cli:
@@ -47,6 +49,8 @@ jobs:
         run: minikube start
 
       - name: Build up base docker images
+        env: 
+          BUILD_ONLY_DEFAULT_JDK: true
         run: |
           eval $(minikube -p minikube docker-env)
           scripts/build-all.sh test
