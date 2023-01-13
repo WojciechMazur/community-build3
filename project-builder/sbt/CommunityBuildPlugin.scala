@@ -182,6 +182,7 @@ object CommunityBuildPlugin extends AutoPlugin {
     Compile / scalacOptions,
     Test / scalacOptions
   ) { (args, extracted) =>
+    val argSourceVersion = args.headOption.filter(_.nonEmpty)
     def resolveSourceVersion(scalaVersion: String) = CrossVersion
       .partialVersion(scalaVersion)
       .collect {
@@ -192,11 +193,11 @@ object CommunityBuildPlugin extends AutoPlugin {
       }
 
     (ref: ProjectRef, currentSettings: Seq[String]) => {
-      val scalaVersion = extracted.get(ref / scalaVersion)
+      val scalaVersion = extracted.get(ref / Keys.scalaVersion)
       if (!scalaVersion.startsWith("3.")) currentSettings
       else
         argSourceVersion
-          .orElse(resolveSourceVersion(ref))
+          .orElse(resolveSourceVersion(scalaVersion))
           .fold(currentSettings) { sourceVersion =>
             val newEntries = Seq(s"-source:$sourceVersion")
             println(
