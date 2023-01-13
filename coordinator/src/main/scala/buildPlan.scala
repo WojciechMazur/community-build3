@@ -450,11 +450,17 @@ def createGithubActionJob(
     |
     |name: "Open Community Build"
     |on:
+    |  workflow_call:
+    |    inputs:
+    |      published-scala-version:
+    |        type: string
+    |        description: 'Published Scala version to use'
+    |        required: true
     |  workflow_dispatch:
     |    inputs:
     |      published-scala-version:
     |        type: string
-    |        description: 'Published Scala version to use, if empty compiler would be build with default name'
+    |        description: 'Published Scala version to use, if empty new version of compiler would be build with default name based on the selected repository'
     |      repository-url:
     |        type: string
     |        description: "GitHub repository URL for compiler to build, ignored when published-scala-version is defined"
@@ -513,6 +519,38 @@ def createGithubActionJob(
       }
     }
   }
+  println(s"""
+  |  create-raport:
+  |    needs: [${stageId(plan.indices.last)}]
+  |    runs-on: ubuntu-22.04
+  |    continue-on-error: true
+  |    steps:
+  |      - name: Git Checkout
+  |        uses: actions/checkout@v3
+  |      - name: Install coursier
+  |        uses: coursier/setup-action@v1
+  |        with:
+  |          apps: scala-cli
+  |      
+  |      - name: Generate raport
+  |        env: 
+  |          ES_USER: $${{ secrets.OPENCB_ELASTIC_USER }}
+  |          ES_PASSWORD: $${{ secrets.OPENCB_ELASTIC_PSWD }}
+  |        run: | 
+  |          scalaVersion=$${{ $setupOutputs.scala-version }}
+  |          lastRC="$$(./scripts/lastVersionRC.sc)"
+  |          lastStable=$$(./scripts/lastVersionStable.sc)
+  |
+  |          ./scripts/raport-regressions.scala $$scalaVersion > raport-full.md
+  |          ./scripts/raport-regressions.scala $$scalaVersion --compare-with $$lastRC > raport-compare-$$lastRC.md
+  |          ./scripts/raport-regressions.scala $$scalaVersion --compare-with $$lastRC > raport-compare-$$lastStable.md
+  |
+  |      - name: Upload raports
+  |        uses: actions/upload-artifact@v3
+  |        with:
+  |          name: build-raports
+  |          path: $${{ github.workspace }}/raport-*.md
+  |""".stripMargin)
 
   printer.mkString
 }
