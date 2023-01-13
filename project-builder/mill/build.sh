@@ -12,7 +12,7 @@ version="$3"      # e.g. 1.0.2-communityBuild
 targets=($4)      # e.g. "com.example%foo com.example%bar"
 mavenRepoUrl="$5" # e.g. https://mvn-repo/maven2/2021-05-23_1
 projectConfig="$6"
-extraScalacOptions"$7"
+extraScalacOptions="$7"
 disabledScalacOption="$8"
 
 if [[ -z $projectConfig ]]; then
