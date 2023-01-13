@@ -14,7 +14,7 @@ targets="$5"            # e.g. com.example%greeter
 mvnRepoUrl="$6"         # e.g. https://mvn-repo/maven2/2021-05-23_1
 enforcedSbtVersion="$7" # e.g. '1.5.5' or empty ''
 projectConfig="$8"
-extraScalacOptions"$9" # e.g '' or "-Wunused:all -Ylightweight-lazy-vals"
+extraScalacOptions="$9" # e.g '' or "-Wunused:all -Ylightweight-lazy-vals"
 disabledScalacOption="${10}"
 
 scriptDir="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
