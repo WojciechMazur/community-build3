@@ -1,5 +1,9 @@
 name: Auto update build plan
 
+permissions:
+  contents: write
+  pull-requests: write
+
 on:
   workflow_dispatch:
   schedule:
@@ -12,8 +16,10 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@v3
 
-      - name: Install scala-cli
-        run: sdk install scalacli
+      - name: Install coursier
+        uses: coursier/setup-action@v1
+        with:
+          apps: scala-cli
 
       - name: Build plan
         run: scala-cli run coordinator/ -- 3 -1 -1 "" env/prod/config/replaced-projects.txt env/prod/config/projects-config.conf env/prod/config/filtered-projects.txt
@@ -22,7 +28,7 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         id: cpr
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.OPENCB_CONFIG_UPDATE_TOKEN }}
           commit-message: Update build config
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
@@ -46,5 +52,5 @@ jobs:
       - name: Auto merge PR
         uses: peter-evans/enable-pull-request-automerge@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.OPENCB_CONFIG_UPDATE_TOKEN }}
           pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
