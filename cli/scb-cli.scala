@@ -22,6 +22,7 @@ import scala.util.control.NoStackTrace
 
 import Config.*
 import os.PathConvertible
+import io.k8s.api.core.v1.ContainerState
 given Formats = DefaultFormats
 given ExecutionContext = ExecutionContext.Implicits.global
 
@@ -111,8 +112,7 @@ object Config:
         .hidden(),
       opt[Unit]("publishArtifacts")
         .action { (_, c) => c.copy(publishArtifacts = false) }
-        .text("Publish artifacts of the build")
-        .hidden(),
+        .text("Publish artifacts of the build"),
       // Commands
       cmd("run")
         .action { (_, c) => c.copy(command = Config.Command.RunCustomProject) }
@@ -564,7 +564,7 @@ class MinikubeReproducer(using config: Config, build: BuildInfo):
       podsApi.deleteAll(selectorLabels) *>
       podsApi.list(selectorLabels).iterateUntil(_.items.isEmpty)
 
-    def getContainerState = podsApi
+    def getContainerState(retries: Int = 60): F[ContainerState] = podsApi
       .list(selectorLabels)
       .delayBy(5.seconds)
       .map { pods =>
@@ -578,10 +578,16 @@ class MinikubeReproducer(using config: Config, build: BuildInfo):
       }
       .iterateUntil(_.nonEmpty)
       .map(_.get)
+      .recoverWith{
+        case ex: Exception if retries > 0 =>
+           Console.err.println(s"Failed to get container state, retry with backoff, reason: ${ex}")
+          Thread.sleep(1000)
+          getContainerState(retries - 1)
+      } 
 
     def waitForStart =
       for
-        finalState <- getContainerState.iterateWhile { state =>
+        finalState <- getContainerState().iterateWhile { state =>
           state.waiting.flatMap(_.reason) match {
             case Some("ContainerCreating" | "ImagePullBackOff") => true
             case _                                              => false
@@ -650,7 +656,7 @@ class MinikubeReproducer(using config: Config, build: BuildInfo):
               s"Logs of job ${jobName} ($label) redirected to ${logsFile.toNIO.toAbsolutePath}"
             )
 
-        exitCode <- getContainerState
+        exitCode <- getContainerState()
           .iterateUntil(_.terminated.isDefined)
           .map(_.terminated.get.exitCode)
           .timeout(60.minute)
