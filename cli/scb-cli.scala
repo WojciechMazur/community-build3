@@ -106,11 +106,11 @@ object Config:
         .action { (_, c) => c.copy(mode = Mode.Local) }
         .text("Run build locally without minikube cluster"),
       opt[Unit]("noRedirectLogs")
-        .action { (_, c) => c.copy(redirectLogs = false) }
+        .action { (_, c) => c.copy(redirectLogs = true) }
         .text("Do not redirect runners logs to file")
         .hidden(),
       opt[Unit]("publishArtifacts")
-        .action { (_, c) => c.copy(publishArtifacts = true) }
+        .action { (_, c) => c.copy(publishArtifacts = false) }
         .text("Publish artifacts of the build")
         .hidden(),
       // Commands
