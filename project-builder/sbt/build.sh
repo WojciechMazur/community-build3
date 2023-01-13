@@ -50,14 +50,6 @@ if [[ -z $version ]]; then
   setVersionCmd=""
 fi
 
-if [[ ! -z $extraScalacOptions ]]; then
-  echo "Using extra scalacOptions: ${extraScalacOptions}"
-fi
-
-if [[ ! -z $disabledScalacOption ]]; then
-  echo "Filtering out scalacOptions: ${disabledScalacOption}"
-fi
-
 sbtSettings=(
   --batch
   --no-colors
