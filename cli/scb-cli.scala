@@ -49,7 +49,7 @@ case class Config(
     customRun: CustomBuildConfig = CustomBuildConfig(null, null),
     minikube: Config.MinikubeConfig = Config.MinikubeConfig(),
     redirectLogs: Boolean = true,
-    publishArtifacts: Boolean = true,
+    publishArtifacts: Boolean = false,
     jobId: String = "custom",
     buildUpstream: Boolean = false,
     ignoreFailedUpstream: Boolean = false
@@ -109,9 +109,9 @@ object Config:
         .action { (_, c) => c.copy(redirectLogs = false) }
         .text("Do not redirect runners logs to file")
         .hidden(),
-      opt[Unit]("noPublishArtifacts")
-        .action { (_, c) => c.copy(publishArtifacts = false) }
-        .text("Don't publish artifacts of the build")
+      opt[Unit]("publishArtifacts")
+        .action { (_, c) => c.copy(publishArtifacts = true) }
+        .text("Publish artifacts of the build")
         .hidden(),
       // Commands
       cmd("run")
