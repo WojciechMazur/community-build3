@@ -991,7 +991,7 @@ class LocalReproducer(using config: Config, build: BuildInfo):
 
       def shouldRetryWithForcedScalaVerion = {
         val output = os.read(logsFile).toString
-        def failedToSwitch = output.contains("RuntimeException: Switch failed: no subproject")
+        def failedToSwitch = output.contains("Switch failed: no subproject")
         def missingMapping = output.contains("Module mapping missing:")
         failedToSwitch || missingMapping
       }
