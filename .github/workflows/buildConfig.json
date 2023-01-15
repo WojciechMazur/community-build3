@@ -3899,6 +3899,48 @@
     "version":"1.0.0",
     "targets":"org.okasaki%hwtest"
   },
+  "christian-schlichtherle_circe-kafka":{
+    "name":"christian-schlichtherle_circe-kafka",
+    "dependencies":[
+      "circe_circe",
+      "scalatest_scalatest"
+    ],
+    "repoUrl":"https://github.com/christian-schlichtherle/circe-kafka.git",
+    "revision":"v3.0.0",
+    "version":"3.0.0",
+    "targets":"global.namespace.circe-kafka%circe-kafka",
+    "config":{
+      "projects":{
+        "exclude":[
+          
+        ],
+        "overrides":{
+          
+        }
+      },
+      "java":{
+        "version":"8"
+      },
+      "sbt":{
+        "commands":[
+          
+        ],
+        "options":[
+          
+        ]
+      },
+      "mill":{
+        "options":[
+          
+        ]
+      },
+      "tests":"full",
+      "memoryRequestMb":2048,
+      "sourcePatches":[
+        
+      ]
+    }
+  },
   "chronoscala_chronoscala":{
     "name":"chronoscala_chronoscala",
     "dependencies":[
@@ -9772,6 +9814,52 @@
       ]
     }
   },
+  "frawa_typed-json":{
+    "name":"frawa_typed-json",
+    "dependencies":[
+      "scalameta_munit",
+      "typelevel_jawn",
+      "frawa_inline-files",
+      "zio_zio-json"
+    ],
+    "repoUrl":"https://github.com/frawa/typed-json.git",
+    "revision":"v0.1.0",
+    "version":"0.1.0",
+    "targets":"io.github.frawa%typed-json-parser io.github.frawa%typed-json-parser-jawn io.github.frawa%typed-json-macros io.github.frawa%typed-json-parser-zio io.github.frawa%typed-json",
+    "config":{
+      "projects":{
+        "exclude":[
+          
+        ],
+        "overrides":{
+          "typed-json":{
+            "tests":"disabled"
+          }
+        }
+      },
+      "java":{
+        
+      },
+      "sbt":{
+        "commands":[
+          
+        ],
+        "options":[
+          
+        ]
+      },
+      "mill":{
+        "options":[
+          
+        ]
+      },
+      "tests":"full",
+      "memoryRequestMb":4096,
+      "sourcePatches":[
+        
+      ]
+    }
+  },
   "frugalmechanic_scala-optparse":{
     "name":"frugalmechanic_scala-optparse",
     "dependencies":[
@@ -13532,51 +13620,6 @@
       ]
     }
   },
-  "indoorvivants_opaque-newtypes":{
-    "name":"indoorvivants_opaque-newtypes",
-    "dependencies":[
-      "scalameta_munit"
-    ],
-    "repoUrl":"https://github.com/indoorvivants/opaque-newtypes.git",
-    "revision":"v0.0.2",
-    "version":"0.0.2",
-    "targets":"com.indoorvivants%opaque-newtypes",
-    "config":{
-      "projects":{
-        "exclude":[
-          
-        ],
-        "overrides":{
-          
-        }
-      },
-      "java":{
-        "version":"17"
-      },
-      "sbt":{
-        "commands":[
-          
-        ],
-        "options":[
-          
-        ]
-      },
-      "mill":{
-        "options":[
-          
-        ]
-      },
-      "tests":"full",
-      "memoryRequestMb":2048,
-      "sourcePatches":[
-        {
-          "path":"build.sbt",
-          "pattern":"val Scala3          = \"3.2.1\"",
-          "replaceWith":"val Scala3 = \"<SCALA_VERSION>\""
-        }
-      ]
-    }
-  },
   "indoorvivants_rendition":{
     "name":"indoorvivants_rendition",
     "dependencies":[
@@ -15552,52 +15595,6 @@
         {
           "path":"build.sbt",
           "pattern":"val scala3Version = \"3.1.0\"",
-          "replaceWith":"val scala3Version = \"<SCALA_VERSION>\""
-        }
-      ]
-    }
-  },
-  "jphmrst_scala-automata":{
-    "name":"jphmrst_scala-automata",
-    "dependencies":[
-      "scalatest_scalatest",
-      "jphmrst_scala-latex"
-    ],
-    "repoUrl":"https://github.com/jphmrst/scala-automata.git",
-    "revision":"v0.2.0",
-    "version":"0.2.0",
-    "targets":"org.maraist%scala-automata",
-    "config":{
-      "projects":{
-        "exclude":[
-          
-        ],
-        "overrides":{
-          
-        }
-      },
-      "java":{
-        
-      },
-      "sbt":{
-        "commands":[
-          
-        ],
-        "options":[
-          
-        ]
-      },
-      "mill":{
-        "options":[
-          
-        ]
-      },
-      "tests":"full",
-      "memoryRequestMb":2048,
-      "sourcePatches":[
-        {
-          "path":"build.sbt",
-          "pattern":"val scala3Version = \"3.0.2\"",
           "replaceWith":"val scala3Version = \"<SCALA_VERSION>\""
         }
       ]
@@ -17870,6 +17867,16 @@
     "version":"9.0.0",
     "targets":"com.github.losizm%little-json"
   },
+  "losizm_little-security":{
+    "name":"losizm_little-security",
+    "dependencies":[
+      "scalatest_scalatest"
+    ],
+    "repoUrl":"https://github.com/losizm/little-security.git",
+    "revision":"v1.1.0",
+    "version":"1.1.0",
+    "targets":"com.github.losizm%little-security"
+  },
   "losizm_little-sql":{
     "name":"losizm_little-sql",
     "dependencies":[
@@ -18075,48 +18082,6 @@
     "revision":"v3.7.1",
     "version":"3.7.1",
     "targets":"com.malliina%mobile-push",
-    "config":{
-      "projects":{
-        "exclude":[
-          
-        ],
-        "overrides":{
-          
-        }
-      },
-      "java":{
-        "version":"11"
-      },
-      "sbt":{
-        "commands":[
-          
-        ],
-        "options":[
-          
-        ]
-      },
-      "mill":{
-        "options":[
-          
-        ]
-      },
-      "tests":"full",
-      "memoryRequestMb":2048,
-      "sourcePatches":[
-        
-      ]
-    }
-  },
-  "malliina_util-base":{
-    "name":"malliina_util-base",
-    "dependencies":[
-      "circe_circe",
-      "scalameta_munit"
-    ],
-    "repoUrl":"https://github.com/malliina/util-base.git",
-    "revision":"v3.1.0",
-    "version":"3.1.0",
-    "targets":"com.malliina%util-base",
     "config":{
       "projects":{
         "exclude":[
@@ -18356,6 +18321,51 @@
       "memoryRequestMb":2048,
       "sourcePatches":[
         
+      ]
+    }
+  },
+  "mdedetrich_scalacheck":{
+    "name":"mdedetrich_scalacheck",
+    "dependencies":[
+      
+    ],
+    "repoUrl":"https://github.com/mdedetrich/scalacheck.git",
+    "revision":"",
+    "version":"1.17.0",
+    "targets":"org.mdedetrich%scalacheck",
+    "config":{
+      "projects":{
+        "exclude":[
+          
+        ],
+        "overrides":{
+          
+        }
+      },
+      "java":{
+        "version":"11"
+      },
+      "sbt":{
+        "commands":[
+          
+        ],
+        "options":[
+          
+        ]
+      },
+      "mill":{
+        "options":[
+          
+        ]
+      },
+      "tests":"full",
+      "memoryRequestMb":2048,
+      "sourcePatches":[
+        {
+          "path":"build.sbt",
+          "pattern":"val Scala3 = \"3.1.3\"",
+          "replaceWith":"val Scala3 = \"<SCALA_VERSION>\""
+        }
       ]
     }
   },
@@ -27655,6 +27665,16 @@
       ]
     }
   },
+  "sciss_lucrepi":{
+    "name":"sciss_lucrepi",
+    "dependencies":[
+      "sciss_soundprocesses"
+    ],
+    "repoUrl":"https://github.com/sciss/lucrepi.git",
+    "revision":"v1.11.0",
+    "version":"1.11.0",
+    "targets":"de.sciss%lucre-pi"
+  },
   "sciss_model":{
     "name":"sciss_model",
     "dependencies":[
@@ -28282,6 +28302,51 @@
       },
       "java":{
         "version":"11"
+      },
+      "sbt":{
+        "commands":[
+          
+        ],
+        "options":[
+          
+        ]
+      },
+      "mill":{
+        "options":[
+          
+        ]
+      },
+      "tests":"full",
+      "memoryRequestMb":2048,
+      "sourcePatches":[
+        {
+          "path":"build.sbt",
+          "pattern":"val scala3Version = \"3.0.2\"",
+          "replaceWith":"val scala3Version = \"<SCALA_VERSION>\""
+        }
+      ]
+    }
+  },
+  "sean-ideabank_rudolf":{
+    "name":"sean-ideabank_rudolf",
+    "dependencies":[
+      
+    ],
+    "repoUrl":"https://github.com/sean-ideabank/rudolf.git",
+    "revision":"",
+    "version":"0.1.1",
+    "targets":"works.ideabank%rudolf",
+    "config":{
+      "projects":{
+        "exclude":[
+          
+        ],
+        "overrides":{
+          
+        }
+      },
+      "java":{
+        
       },
       "sbt":{
         "commands":[
@@ -30449,69 +30514,6 @@
         
       ]
     }
-  },
-  "swagger-akka-http_swagger-scala3-enum-module":{
-    "name":"swagger-akka-http_swagger-scala3-enum-module",
-    "dependencies":[
-      "swagger-akka-http_swagger-scala-module",
-      "fasterxml_jackson-module-scala",
-      "scalatest_scalatest"
-    ],
-    "repoUrl":"https://github.com/swagger-akka-http/swagger-scala3-enum-module.git",
-    "revision":"v2.3.0",
-    "version":"2.3.0",
-    "targets":"com.github.swagger-akka-http%swagger-scala3-enum-module",
-    "config":{
-      "projects":{
-        "exclude":[
-          
-        ],
-        "overrides":{
-          
-        }
-      },
-      "java":{
-        "version":"8"
-      },
-      "sbt":{
-        "commands":[
-          
-        ],
-        "options":[
-          
-        ]
-      },
-      "mill":{
-        "options":[
-          
-        ]
-      },
-      "tests":"full",
-      "memoryRequestMb":2048,
-      "sourcePatches":[
-        
-      ]
-    }
-  },
-  "swaldman_mchange-codegenutil":{
-    "name":"swaldman_mchange-codegenutil",
-    "dependencies":[
-      
-    ],
-    "repoUrl":"https://github.com/swaldman/mchange-codegenutil.git",
-    "revision":"v0.0.2",
-    "version":"0.0.2",
-    "targets":""
-  },
-  "swaldman_mchange-literal":{
-    "name":"swaldman_mchange-literal",
-    "dependencies":[
-      
-    ],
-    "repoUrl":"https://github.com/swaldman/mchange-literal.git",
-    "revision":"",
-    "version":"0.1.2",
-    "targets":""
   },
   "swaldman_untemplate":{
     "name":"swaldman_untemplate",
@@ -37159,6 +37161,47 @@
           "pattern":"val Scala3 = \"3.0.1-RC2\"",
           "replaceWith":"val Scala3 = \"<SCALA_VERSION>\""
         }
+      ]
+    }
+  },
+  "xuwei-k_scala3profile":{
+    "name":"xuwei-k_scala3profile",
+    "dependencies":[
+      
+    ],
+    "repoUrl":"https://github.com/xuwei-k/scala3profile.git",
+    "revision":"v0.1.0",
+    "version":"0.1.0",
+    "targets":"com.github.xuwei-k%scala3profile",
+    "config":{
+      "projects":{
+        "exclude":[
+          
+        ],
+        "overrides":{
+          
+        }
+      },
+      "java":{
+        "version":"17"
+      },
+      "sbt":{
+        "commands":[
+          
+        ],
+        "options":[
+          
+        ]
+      },
+      "mill":{
+        "options":[
+          
+        ]
+      },
+      "tests":"full",
+      "memoryRequestMb":2048,
+      "sourcePatches":[
+        
       ]
     }
   },

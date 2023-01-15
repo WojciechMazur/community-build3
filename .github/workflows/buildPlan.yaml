@@ -1,5 +1,5 @@
 
-# projects total:     984
+# projects total:     985
 # min stars count:    -1
 # max projects count: 1000
 
@@ -97,6 +97,7 @@ jobs:
         - name: lunduniversity_introprog-scalalib
         - name: markehammons_slinc
         - name: max-leuthaeuser_scroll
+        - name: mdedetrich_scalacheck
         - name: nafg_scala-phonenumber
         - name: nickburkard_aws-cdk-scala
         - name: nscala-time_nscala-time
@@ -126,14 +127,13 @@ jobs:
         - name: sciss_raphaelicons
         - name: sciss_transform4s
         - name: sciss_treetable
+        - name: sean-ideabank_rudolf
         - name: sinaghaffari_monadicsimplifier
         - name: sirthias_macrolizer
         - name: softwaremill_magnolia
         - name: softwaremill_odelay
         - name: softwaremill_scala-common
         - name: spray_spray
-        - name: swaldman_mchange-codegenutil
-        - name: swaldman_mchange-literal
         - name: t2v_holidays
         - name: tabdulradi_happypath
         - name: themillhousegroup_scoup
@@ -144,6 +144,7 @@ jobs:
         - name: wz7982_easysql-scala
         - name: xuwei-k_applybuilder
         - name: xuwei-k_nobox
+        - name: xuwei-k_scala3profile
         - name: yakivy_jam
         - name: yurique_embedded-files-macro
         - name: zio_zio-constraintless
@@ -287,7 +288,6 @@ jobs:
         - name: i10416_munkres
         - name: ij-plugins_ijp-javacv
         - name: ij-plugins_ijp-toolkit
-        - name: indoorvivants_opaque-newtypes
         - name: indoorvivants_rendition
         - name: irevive_union-derivation
         - name: j5ik2o_base64scala
@@ -299,7 +299,6 @@ jobs:
         - name: jodersky_yamlesque
         - name: jozic_scalax-collection
         - name: jphmrst_bps
-        - name: jphmrst_scala-automata
         - name: kcrypt_scala-biginteger
         - name: kcrypt_scala-blake3
         - name: kcrypt_scala-sha
@@ -315,6 +314,7 @@ jobs:
         - name: losizm_little-config
         - name: losizm_little-io
         - name: losizm_little-json
+        - name: losizm_little-security
         - name: losizm_little-sql
         - name: losizm_little-time
         - name: losizm_scamper
@@ -597,7 +597,6 @@ jobs:
         - name: shiftleftsecurity_codepropertygraph
         - name: sksamuel_avro4s
         - name: sky-uk_kafka-topic-loader
-        - name: swagger-akka-http_swagger-scala3-enum-module
         - name: swaldman_untemplate
         - name: thoughtworksinc_bindable.scala
         - name: tomasmikula_libretto
@@ -726,6 +725,7 @@ jobs:
         - name: bp3r_jsonrpc2
         - name: caspercommunityio_casper-scala-sdk
         - name: chatwork_scala-jwk
+        - name: christian-schlichtherle_circe-kafka
         - name: circe_circe-jackson
         - name: circe_circe-yaml
         - name: data-tools_big-data-types
@@ -740,7 +740,6 @@ jobs:
         - name: karazinscalausersgroup_mongo-literals
         - name: katrix_perspective
         - name: kiberstender_fjwt
-        - name: malliina_util-base
         - name: mrdimosthenis_scala-synapses
         - name: msgpack4z_msgpack4z-circe
         - name: nafg_cloud-logging-logback-scala
@@ -792,9 +791,11 @@ jobs:
         - name: dacr_zio-lmdb
         - name: darrenjw_scala-glm
         - name: darrenjw_scala-smfsb
+        - name: frawa_typed-json
         - name: gnieh_geo-scala
         - name: imrafaelmerino_json-scala-values
         - name: katrix_typenbt
+        - name: sciss_lucrepi
         - name: sciss_patterns
         - name: sciss_wolkenpumpe
         - name: shiftleftsecurity_js2cpg
