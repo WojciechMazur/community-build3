@@ -1793,6 +1793,50 @@
       ]
     }
   },
+  "armanbilge_jawn-fs2":{
+    "name":"armanbilge_jawn-fs2",
+    "dependencies":[
+      "typelevel_jawn",
+      "typelevel_fs2",
+      "scalameta_munit",
+      "armanbilge_munit-cats-effect"
+    ],
+    "repoUrl":"https://github.com/armanbilge/jawn-fs2.git",
+    "revision":"",
+    "version":"2.2.0-129-fdba7f4",
+    "targets":"org.typelevel%jawn-fs2",
+    "config":{
+      "projects":{
+        "exclude":[
+          
+        ],
+        "overrides":{
+          
+        }
+      },
+      "java":{
+        "version":"8"
+      },
+      "sbt":{
+        "commands":[
+          
+        ],
+        "options":[
+          
+        ]
+      },
+      "mill":{
+        "options":[
+          
+        ]
+      },
+      "tests":"full",
+      "memoryRequestMb":2048,
+      "sourcePatches":[
+        
+      ]
+    }
+  },
   "armanbilge_litter":{
     "name":"armanbilge_litter",
     "dependencies":[
@@ -2839,6 +2883,16 @@
     "version":"0.1.2",
     "targets":"org.beangle.doc%beangle-doc-docx org.beangle.doc%beangle-doc-pdf"
   },
+  "beangle_ids":{
+    "name":"beangle_ids",
+    "dependencies":[
+      "scalatest_scalatest"
+    ],
+    "repoUrl":"https://github.com/beangle/ids.git",
+    "revision":"v0.3.4",
+    "version":"0.3.4",
+    "targets":"org.beangle.ids%beangle-ids-cas org.beangle.ids%beangle-ids-web"
+  },
   "benhutchison_scalaswingcontrib":{
     "name":"benhutchison_scalaswingcontrib",
     "dependencies":[
@@ -3021,47 +3075,6 @@
         ]
       },
       "tests":"compile-only",
-      "memoryRequestMb":2048,
-      "sourcePatches":[
-        
-      ]
-    }
-  },
-  "bilal-fazlani_rainbowcli":{
-    "name":"bilal-fazlani_rainbowcli",
-    "dependencies":[
-      "scalameta_munit"
-    ],
-    "repoUrl":"https://github.com/bilal-fazlani/rainbowcli.git",
-    "revision":"v3.0.1",
-    "version":"3.0.1",
-    "targets":"com.bilal-fazlani%rainbowcli",
-    "config":{
-      "projects":{
-        "exclude":[
-          
-        ],
-        "overrides":{
-          
-        }
-      },
-      "java":{
-        "version":"11"
-      },
-      "sbt":{
-        "commands":[
-          
-        ],
-        "options":[
-          
-        ]
-      },
-      "mill":{
-        "options":[
-          
-        ]
-      },
-      "tests":"full",
       "memoryRequestMb":2048,
       "sourcePatches":[
         
@@ -5642,6 +5655,16 @@
       ]
     }
   },
+  "daghemberg_paut-program":{
+    "name":"daghemberg_paut-program",
+    "dependencies":[
+      "com-lihaoyi_os-lib"
+    ],
+    "repoUrl":"https://github.com/daghemberg/paut-program.git",
+    "revision":"",
+    "version":"0.1.4",
+    "targets":"io.github.daghemberg%paut-program"
+  },
   "daghemberg_problemutils":{
     "name":"daghemberg_problemutils",
     "dependencies":[
@@ -6284,50 +6307,6 @@
     "revision":"v0.5.0-M2",
     "version":"0.5.0-M2",
     "targets":"io.chrisdavenport%epimetheus",
-    "config":{
-      "projects":{
-        "exclude":[
-          
-        ],
-        "overrides":{
-          
-        }
-      },
-      "java":{
-        "version":"11"
-      },
-      "sbt":{
-        "commands":[
-          
-        ],
-        "options":[
-          
-        ]
-      },
-      "mill":{
-        "options":[
-          
-        ]
-      },
-      "tests":"full",
-      "memoryRequestMb":2048,
-      "sourcePatches":[
-        
-      ]
-    }
-  },
-  "davenverse_epimetheus-circuit":{
-    "name":"davenverse_epimetheus-circuit",
-    "dependencies":[
-      "typelevel_cats",
-      "typelevel_cats-effect",
-      "davenverse_epimetheus",
-      "davenverse_circuit"
-    ],
-    "repoUrl":"https://github.com/davenverse/epimetheus-circuit.git",
-    "revision":"v0.5.0-M2",
-    "version":"0.5.0-M2",
-    "targets":"io.chrisdavenport%epimetheus-circuit",
     "config":{
       "projects":{
         "exclude":[
@@ -12283,7 +12262,7 @@
       "zio_zio-json",
       "typelevel_scalacheck",
       "http4s_http4s",
-      "typelevel_jawn-fs2",
+      "armanbilge_jawn-fs2",
       "softwaremill_sttp",
       "spray_spray",
       "json4s_json4s",
@@ -12326,6 +12305,47 @@
           "pattern":"val scala3 = \"3.2.1\"",
           "replaceWith":"val scala3 = \"<SCALA_VERSION>\""
         }
+      ]
+    }
+  },
+  "hnaderi_scala-readpass":{
+    "name":"hnaderi_scala-readpass",
+    "dependencies":[
+      
+    ],
+    "repoUrl":"https://github.com/hnaderi/scala-readpass.git",
+    "revision":"v0.0.1",
+    "version":"0.0.1",
+    "targets":"dev.hnaderi%readpassword",
+    "config":{
+      "projects":{
+        "exclude":[
+          
+        ],
+        "overrides":{
+          
+        }
+      },
+      "java":{
+        "version":"8"
+      },
+      "sbt":{
+        "commands":[
+          
+        ],
+        "options":[
+          
+        ]
+      },
+      "mill":{
+        "options":[
+          
+        ]
+      },
+      "tests":"full",
+      "memoryRequestMb":2048,
+      "sourcePatches":[
+        
       ]
     }
   },
@@ -12472,7 +12492,7 @@
       "armanbilge_scalacheck-effect",
       "typelevel_keypool",
       "armanbilge_log4cats",
-      "typelevel_jawn-fs2",
+      "armanbilge_jawn-fs2",
       "typelevel_jawn",
       "circe_circe",
       "typelevel_cats-parse",
@@ -13109,52 +13129,6 @@
       ]
     }
   },
-  "hughsimpson_scalameter":{
-    "name":"hughsimpson_scalameter",
-    "dependencies":[
-      "scalatest_scalatest",
-      "scala_scala-xml",
-      "scala_scala-parser-combinators",
-      "fasterxml_jackson-module-scala",
-      "scala_scala-collection-compat",
-      "typelevel_scalacheck"
-    ],
-    "repoUrl":"https://github.com/hughsimpson/scalameter.git",
-    "revision":"v0.22.1",
-    "version":"0.22.1",
-    "targets":"io.github.hughsimpson%scalameter io.github.hughsimpson%scalameter-core",
-    "config":{
-      "projects":{
-        "exclude":[
-          
-        ],
-        "overrides":{
-          
-        }
-      },
-      "java":{
-        "version":"11"
-      },
-      "sbt":{
-        "commands":[
-          
-        ],
-        "options":[
-          
-        ]
-      },
-      "mill":{
-        "options":[
-          
-        ]
-      },
-      "tests":"compile-only",
-      "memoryRequestMb":2048,
-      "sourcePatches":[
-        
-      ]
-    }
-  },
   "i10416_cssminifier":{
     "name":"i10416_cssminifier",
     "dependencies":[
@@ -13246,6 +13220,19 @@
         }
       ]
     }
+  },
+  "i10416_slackapis":{
+    "name":"i10416_slackapis",
+    "dependencies":[
+      "circe_circe",
+      "typelevel_cats-effect",
+      "http4s_http4s",
+      "scalameta_munit"
+    ],
+    "repoUrl":"https://github.com/i10416/slackapis.git",
+    "revision":"v0.0.2",
+    "version":"0.0.2",
+    "targets":"dev.i10416%slackapis-core"
   },
   "ichoran_kse3":{
     "name":"ichoran_kse3",
@@ -13532,51 +13519,6 @@
       ]
     }
   },
-  "indoorvivants_opaque-newtypes":{
-    "name":"indoorvivants_opaque-newtypes",
-    "dependencies":[
-      "scalameta_munit"
-    ],
-    "repoUrl":"https://github.com/indoorvivants/opaque-newtypes.git",
-    "revision":"v0.0.2",
-    "version":"0.0.2",
-    "targets":"com.indoorvivants%opaque-newtypes",
-    "config":{
-      "projects":{
-        "exclude":[
-          
-        ],
-        "overrides":{
-          
-        }
-      },
-      "java":{
-        "version":"17"
-      },
-      "sbt":{
-        "commands":[
-          
-        ],
-        "options":[
-          
-        ]
-      },
-      "mill":{
-        "options":[
-          
-        ]
-      },
-      "tests":"full",
-      "memoryRequestMb":2048,
-      "sourcePatches":[
-        {
-          "path":"build.sbt",
-          "pattern":"val Scala3          = \"3.2.1\"",
-          "replaceWith":"val Scala3 = \"<SCALA_VERSION>\""
-        }
-      ]
-    }
-  },
   "indoorvivants_rendition":{
     "name":"indoorvivants_rendition",
     "dependencies":[
@@ -13855,6 +13797,51 @@
           "path":"build.sbt",
           "pattern":"val Scala3 = \"3.2.0\"",
           "replaceWith":"val Scala3 = \"<SCALA_VERSION>\""
+        }
+      ]
+    }
+  },
+  "ingarabr_http4s-cloud-functions":{
+    "name":"ingarabr_http4s-cloud-functions",
+    "dependencies":[
+      "http4s_http4s"
+    ],
+    "repoUrl":"https://github.com/ingarabr/http4s-cloud-functions.git",
+    "revision":"v0.3.0",
+    "version":"0.3.0",
+    "targets":"com.github.ingarabr%http4s-cloud-functions",
+    "config":{
+      "projects":{
+        "exclude":[
+          
+        ],
+        "overrides":{
+          
+        }
+      },
+      "java":{
+        "version":"8"
+      },
+      "sbt":{
+        "commands":[
+          
+        ],
+        "options":[
+          
+        ]
+      },
+      "mill":{
+        "options":[
+          
+        ]
+      },
+      "tests":"full",
+      "memoryRequestMb":2048,
+      "sourcePatches":[
+        {
+          "path":"project/Versions.scala",
+          "pattern":"val scala3 = \"3.0.1\"",
+          "replaceWith":"val scala3 = \"<SCALA_VERSION>\""
         }
       ]
     }
@@ -15557,52 +15544,6 @@
       ]
     }
   },
-  "jphmrst_scala-automata":{
-    "name":"jphmrst_scala-automata",
-    "dependencies":[
-      "scalatest_scalatest",
-      "jphmrst_scala-latex"
-    ],
-    "repoUrl":"https://github.com/jphmrst/scala-automata.git",
-    "revision":"v0.2.0",
-    "version":"0.2.0",
-    "targets":"org.maraist%scala-automata",
-    "config":{
-      "projects":{
-        "exclude":[
-          
-        ],
-        "overrides":{
-          
-        }
-      },
-      "java":{
-        
-      },
-      "sbt":{
-        "commands":[
-          
-        ],
-        "options":[
-          
-        ]
-      },
-      "mill":{
-        "options":[
-          
-        ]
-      },
-      "tests":"full",
-      "memoryRequestMb":2048,
-      "sourcePatches":[
-        {
-          "path":"build.sbt",
-          "pattern":"val scala3Version = \"3.0.2\"",
-          "replaceWith":"val scala3Version = \"<SCALA_VERSION>\""
-        }
-      ]
-    }
-  },
   "jphmrst_scala-latex":{
     "name":"jphmrst_scala-latex",
     "dependencies":[
@@ -15643,6 +15584,51 @@
         {
           "path":"build.sbt",
           "pattern":"val scala3Version = \"3.0.1\"",
+          "replaceWith":"val scala3Version = \"<SCALA_VERSION>\""
+        }
+      ]
+    }
+  },
+  "jphmrst_scalautils":{
+    "name":"jphmrst_scalautils",
+    "dependencies":[
+      "scalatest_scalatest"
+    ],
+    "repoUrl":"https://github.com/jphmrst/scalautils.git",
+    "revision":"",
+    "version":"1.0.1",
+    "targets":"org.maraist%misc-utils",
+    "config":{
+      "projects":{
+        "exclude":[
+          
+        ],
+        "overrides":{
+          
+        }
+      },
+      "java":{
+        
+      },
+      "sbt":{
+        "commands":[
+          
+        ],
+        "options":[
+          
+        ]
+      },
+      "mill":{
+        "options":[
+          
+        ]
+      },
+      "tests":"full",
+      "memoryRequestMb":2048,
+      "sourcePatches":[
+        {
+          "path":"build.sbt",
+          "pattern":"val scala3Version = \"3.1.0\"",
           "replaceWith":"val scala3Version = \"<SCALA_VERSION>\""
         }
       ]
@@ -18359,6 +18345,51 @@
       ]
     }
   },
+  "mdedetrich_scalacheck":{
+    "name":"mdedetrich_scalacheck",
+    "dependencies":[
+      
+    ],
+    "repoUrl":"https://github.com/mdedetrich/scalacheck.git",
+    "revision":"",
+    "version":"1.17.0",
+    "targets":"org.mdedetrich%scalacheck",
+    "config":{
+      "projects":{
+        "exclude":[
+          
+        ],
+        "overrides":{
+          
+        }
+      },
+      "java":{
+        "version":"11"
+      },
+      "sbt":{
+        "commands":[
+          
+        ],
+        "options":[
+          
+        ]
+      },
+      "mill":{
+        "options":[
+          
+        ]
+      },
+      "tests":"full",
+      "memoryRequestMb":2048,
+      "sourcePatches":[
+        {
+          "path":"build.sbt",
+          "pattern":"val Scala3 = \"3.1.3\"",
+          "replaceWith":"val Scala3 = \"<SCALA_VERSION>\""
+        }
+      ]
+    }
+  },
   "metarank_cfor":{
     "name":"metarank_cfor",
     "dependencies":[
@@ -19398,6 +19429,47 @@
     "revision":"v0.4.0",
     "version":"0.4.0",
     "targets":"io.github.nafg.scala-phonenumber%scala-phonenumber",
+    "config":{
+      "projects":{
+        "exclude":[
+          
+        ],
+        "overrides":{
+          
+        }
+      },
+      "java":{
+        "version":"11"
+      },
+      "sbt":{
+        "commands":[
+          
+        ],
+        "options":[
+          
+        ]
+      },
+      "mill":{
+        "options":[
+          
+        ]
+      },
+      "tests":"full",
+      "memoryRequestMb":2048,
+      "sourcePatches":[
+        
+      ]
+    }
+  },
+  "nafg_scheduler":{
+    "name":"nafg_scheduler",
+    "dependencies":[
+      
+    ],
+    "repoUrl":"https://github.com/nafg/scheduler.git",
+    "revision":"v2.0.2",
+    "version":"2.0.2",
+    "targets":"io.github.nafg.scheduler%scheduler",
     "config":{
       "projects":{
         "exclude":[
@@ -23025,6 +23097,52 @@
       "memoryRequestMb":2048,
       "sourcePatches":[
         
+      ]
+    }
+  },
+  "pureharm_pureharm-db-core-jdbc":{
+    "name":"pureharm_pureharm-db-core-jdbc",
+    "dependencies":[
+      "pureharm_pureharm-core",
+      "tpolecat_atto"
+    ],
+    "repoUrl":"https://github.com/pureharm/pureharm-db-core-jdbc.git",
+    "revision":"v0.6.0",
+    "version":"0.6.0",
+    "targets":"com.busymachines%pureharm-db-core-jdbc",
+    "config":{
+      "projects":{
+        "exclude":[
+          
+        ],
+        "overrides":{
+          
+        }
+      },
+      "java":{
+        "version":"8"
+      },
+      "sbt":{
+        "commands":[
+          
+        ],
+        "options":[
+          
+        ]
+      },
+      "mill":{
+        "options":[
+          
+        ]
+      },
+      "tests":"full",
+      "memoryRequestMb":2048,
+      "sourcePatches":[
+        {
+          "path":"build.sbt",
+          "pattern":"val Scala3       = \"3.0.1\"",
+          "replaceWith":"val Scala3 = \"<SCALA_VERSION>\""
+        }
       ]
     }
   },
@@ -28307,6 +28425,51 @@
       ]
     }
   },
+  "sean-ideabank_rudolf":{
+    "name":"sean-ideabank_rudolf",
+    "dependencies":[
+      
+    ],
+    "repoUrl":"https://github.com/sean-ideabank/rudolf.git",
+    "revision":"",
+    "version":"0.1.1",
+    "targets":"works.ideabank%rudolf",
+    "config":{
+      "projects":{
+        "exclude":[
+          
+        ],
+        "overrides":{
+          
+        }
+      },
+      "java":{
+        
+      },
+      "sbt":{
+        "commands":[
+          
+        ],
+        "options":[
+          
+        ]
+      },
+      "mill":{
+        "options":[
+          
+        ]
+      },
+      "tests":"full",
+      "memoryRequestMb":2048,
+      "sourcePatches":[
+        {
+          "path":"build.sbt",
+          "pattern":"val scala3Version = \"3.0.2\"",
+          "replaceWith":"val scala3Version = \"<SCALA_VERSION>\""
+        }
+      ]
+    }
+  },
   "senia-psm_zio-test-akka-http":{
     "name":"senia-psm_zio-test-akka-http",
     "dependencies":[
@@ -30493,26 +30656,6 @@
       ]
     }
   },
-  "swaldman_mchange-codegenutil":{
-    "name":"swaldman_mchange-codegenutil",
-    "dependencies":[
-      
-    ],
-    "repoUrl":"https://github.com/swaldman/mchange-codegenutil.git",
-    "revision":"v0.0.2",
-    "version":"0.0.2",
-    "targets":""
-  },
-  "swaldman_mchange-literal":{
-    "name":"swaldman_mchange-literal",
-    "dependencies":[
-      
-    ],
-    "repoUrl":"https://github.com/swaldman/mchange-literal.git",
-    "revision":"",
-    "version":"0.1.2",
-    "targets":""
-  },
   "swaldman_untemplate":{
     "name":"swaldman_untemplate",
     "dependencies":[
@@ -31601,8 +31744,7 @@
     "name":"tkrs_fluflu",
     "dependencies":[
       "scalatest_scalatest",
-      "lightbend-labs_scala-logging",
-      "tkrs_mess"
+      "lightbend-labs_scala-logging"
     ],
     "repoUrl":"https://github.com/tkrs/fluflu.git",
     "revision":"v0.24.7",
@@ -31637,96 +31779,6 @@
       "memoryRequestMb":2048,
       "sourcePatches":[
         
-      ]
-    }
-  },
-  "tkrs_mess":{
-    "name":"tkrs_mess",
-    "dependencies":[
-      "scalameta_munit"
-    ],
-    "repoUrl":"https://github.com/tkrs/mess.git",
-    "revision":"v0.3.2",
-    "version":"0.3.2",
-    "targets":"com.github.tkrs%mess-core",
-    "config":{
-      "projects":{
-        "exclude":[
-          
-        ],
-        "overrides":{
-          
-        }
-      },
-      "java":{
-        "version":"11"
-      },
-      "sbt":{
-        "commands":[
-          
-        ],
-        "options":[
-          
-        ]
-      },
-      "mill":{
-        "options":[
-          
-        ]
-      },
-      "tests":"full",
-      "memoryRequestMb":4096,
-      "sourcePatches":[
-        {
-          "path":"project/Dependencies.scala",
-          "pattern":"val scala3      = \"3.2.1\"",
-          "replaceWith":"val scala3 = \"<SCALA_VERSION>\""
-        }
-      ]
-    }
-  },
-  "tkrs_mmdb-grpc-scala":{
-    "name":"tkrs_mmdb-grpc-scala",
-    "dependencies":[
-      "scalapb_scalapb"
-    ],
-    "repoUrl":"https://github.com/tkrs/mmdb-grpc-scala.git",
-    "revision":"v0.1.2",
-    "version":"0.1.2",
-    "targets":"com.github.tkrs%mmdb-grpc-core",
-    "config":{
-      "projects":{
-        "exclude":[
-          
-        ],
-        "overrides":{
-          
-        }
-      },
-      "java":{
-        "version":"11"
-      },
-      "sbt":{
-        "commands":[
-          
-        ],
-        "options":[
-          
-        ]
-      },
-      "mill":{
-        "options":[
-          
-        ]
-      },
-      "tests":"full",
-      "memoryRequestMb":2048,
-      "sourcePatches":[
-        {
-          "path":"project/Dependencies.scala",
-          "pattern":"val scala3      = \"3.2.1\"",
-          "replaceWith":"val scala3 = \"<SCALA_VERSION>\""
-        }
       ]
     }
   },
@@ -36617,6 +36669,49 @@
       ]
     }
   },
+  "vlmiroshnikov_saga":{
+    "name":"vlmiroshnikov_saga",
+    "dependencies":[
+      "typelevel_cats",
+      "typelevel_cats-effect",
+      "scalameta_munit"
+    ],
+    "repoUrl":"https://github.com/vlmiroshnikov/saga.git",
+    "revision":"v0.0.1",
+    "version":"0.0.1",
+    "targets":"io.github.vlmiroshnikov%saga-core",
+    "config":{
+      "projects":{
+        "exclude":[
+          
+        ],
+        "overrides":{
+          
+        }
+      },
+      "java":{
+        "version":"11"
+      },
+      "sbt":{
+        "commands":[
+          
+        ],
+        "options":[
+          
+        ]
+      },
+      "mill":{
+        "options":[
+          
+        ]
+      },
+      "tests":"full",
+      "memoryRequestMb":2048,
+      "sourcePatches":[
+        
+      ]
+    }
+  },
   "vlovgr_ciris":{
     "name":"vlovgr_ciris",
     "dependencies":[
@@ -37677,8 +37772,8 @@
       "typelevel_discipline-scalatest"
     ],
     "repoUrl":"https://github.com/zio/interop-cats.git",
-    "revision":"v23.0.0.0",
-    "version":"23.0.0.0",
+    "revision":"v23.0.0.1",
+    "version":"23.0.0.1",
     "targets":"dev.zio%zio-interop-cats dev.zio%zio-interop-cats-tests",
     "config":{
       "projects":{
@@ -37710,7 +37805,7 @@
       "sourcePatches":[
         {
           "path":"project/BuildHelper.scala",
-          "pattern":"val Scala3   = \"3.1.0\"",
+          "pattern":"val Scala3   = \"3.2.1\"",
           "replaceWith":"val Scala3 = \"<SCALA_VERSION>\""
         }
       ]

@@ -1,5 +1,5 @@
 
-# projects total:     984
+# projects total:     987
 # min stars count:    -1
 # max projects count: 1000
 
@@ -82,6 +82,7 @@ jobs:
         - name: gemini-hlsw_lucuma-jts
         - name: getshaka-org_native-converter
         - name: hamnis_dataclass-scalafix
+        - name: hnaderi_scala-readpass
         - name: http4s_hpack
         - name: ichoran_kse3
         - name: iheartradio_ficus
@@ -97,7 +98,9 @@ jobs:
         - name: lunduniversity_introprog-scalalib
         - name: markehammons_slinc
         - name: max-leuthaeuser_scroll
+        - name: mdedetrich_scalacheck
         - name: nafg_scala-phonenumber
+        - name: nafg_scheduler
         - name: nickburkard_aws-cdk-scala
         - name: nscala-time_nscala-time
         - name: nthportal_spaghetti
@@ -126,14 +129,13 @@ jobs:
         - name: sciss_raphaelicons
         - name: sciss_transform4s
         - name: sciss_treetable
+        - name: sean-ideabank_rudolf
         - name: sinaghaffari_monadicsimplifier
         - name: sirthias_macrolizer
         - name: softwaremill_magnolia
         - name: softwaremill_odelay
         - name: softwaremill_scala-common
         - name: spray_spray
-        - name: swaldman_mchange-codegenutil
-        - name: swaldman_mchange-literal
         - name: t2v_holidays
         - name: tabdulradi_happypath
         - name: themillhousegroup_scoup
@@ -234,7 +236,7 @@ jobs:
         - name: arturopala_validator
         - name: ashwinbhaskar_sight-scala
         - name: beangle_doc
-        - name: bilal-fazlani_rainbowcli
+        - name: beangle_ids
         - name: bilal-fazlani_swiftbar4s
         - name: blemale_scaffeine
         - name: bpholt_java-time-literals
@@ -256,6 +258,7 @@ jobs:
         - name: dacr_naturalsort
         - name: dacr_primes
         - name: dacr_split
+        - name: daghemberg_paut-program
         - name: daghemberg_problemutils
         - name: davegurnell_unindent
         - name: davidledwards_scalop
@@ -287,7 +290,6 @@ jobs:
         - name: i10416_munkres
         - name: ij-plugins_ijp-javacv
         - name: ij-plugins_ijp-toolkit
-        - name: indoorvivants_opaque-newtypes
         - name: indoorvivants_rendition
         - name: irevive_union-derivation
         - name: j5ik2o_base64scala
@@ -299,7 +301,7 @@ jobs:
         - name: jodersky_yamlesque
         - name: jozic_scalax-collection
         - name: jphmrst_bps
-        - name: jphmrst_scala-automata
+        - name: jphmrst_scalautils
         - name: kcrypt_scala-biginteger
         - name: kcrypt_scala-blake3
         - name: kcrypt_scala-sha
@@ -412,7 +414,6 @@ jobs:
         - name: tarao_collection-scala
         - name: thoughtworksinc_binding.scala
         - name: thoughtworksinc_tryt.scala
-        - name: tkrs_mess
         - name: tofu-tf_cherry
         - name: tototoshi_scala-csv
         - name: tpolecat_sourcepos
@@ -469,7 +470,6 @@ jobs:
         - name: gekomad_scala-regex-collection
         - name: greenfossil_thorium
         - name: gzoller_scalajack
-        - name: hughsimpson_scalameter
         - name: ij-plugins_ijp-color
         - name: ij-plugins_ijp-debayer2sx
         - name: jelly-rdf_jelly-jvm
@@ -510,7 +510,6 @@ jobs:
         - name: swagger-akka-http_swagger-scala-module
         - name: thoughtworksinc_dsl.scala
         - name: tkrs_fluflu
-        - name: tkrs_mmdb-grpc-scala
         - name: twitter_util
         - name: typelevel_cats
         - name: vagmcs_optimus
@@ -968,6 +967,7 @@ jobs:
         - name: vasilmkd_discipline-specs2
         - name: virtuslab_avocado
         - name: vlmiroshnikov_aero3
+        - name: vlmiroshnikov_saga
     steps:
       - name: "Git Checkout"
         uses: actions/checkout@v3
@@ -997,7 +997,6 @@ jobs:
         - name: cchantep_acolyte
         - name: comcast_ip4s
         - name: davenverse_crossplatformioapp
-        - name: davenverse_epimetheus-circuit
         - name: davenverse_mules
         - name: davenverse_single-fibered
         - name: emergentorder_onnx-scala
@@ -1092,6 +1091,7 @@ jobs:
         include:
         - name: andimiller_hedgehogs
         - name: armanbilge_calico
+        - name: armanbilge_jawn-fs2
         - name: armanbilge_schrodinger
         - name: armanbilge_van-cats
         - name: banno_cosmos4s
@@ -1194,6 +1194,7 @@ jobs:
         - name: polyvariant_scala-git-markers
         - name: profunktor_neutron
         - name: pureharm_pureharm-aws
+        - name: pureharm_pureharm-db-core-jdbc
         - name: pureharm_pureharm-testkit
         - name: rustedbones_scout
         - name: scodec_scodec-protocols
@@ -1256,6 +1257,8 @@ jobs:
         - name: http4s_http4s-scalatags
         - name: http4s_http4s-servlet
         - name: http4s_http4s-twirl
+        - name: i10416_slackapis
+        - name: ingarabr_http4s-cloud-functions
         - name: jbwheatley_pact4s
         - name: killaitis_http4s-cloud-functions
         - name: lego_woof
