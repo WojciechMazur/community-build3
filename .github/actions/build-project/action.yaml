@@ -75,7 +75,6 @@ runs:
 
     - name: Build project
       uses: addnab/docker-run-action@v3
-      id: build-project
       if: steps.check-history.outputs.can-skip-build != 'true'
       with:
         image: "virtuslab/scala-community-build-project-builder:jdk${{ env.java-version }}-v0.2.3"
@@ -104,16 +103,19 @@ runs:
             "${{ inputs.extra-scalac-options }}" \
             "${{ inputs.disabled-scalac-options }}" 2>&1 | tee build-logs.txt
 
-          echo "status=$(cat build-status.txt)" >> $GITHUB_OUTPUT
-
           # Store results
           mv build-logs.txt /opencb/
           mv build-status.txt /opencb/
           mv build-summary.txt /opencb/
+    - name: Check status status
+      id: check-status
+      shell: bash
+      if: steps.check-history.outputs.can-skip-build != 'true'
+      run: echo "status=$(cat build-status.txt)" >> $GITHUB_OUTPUT
 
     - name: Get current job URL
       id: job-info
-      if: steps.build-project.outputs.status != 'success'
+      if: steps.check-status.outputs.status != 'success'
       shell: bash
       env:
         GH_TOKEN: ${{ github.token }}
@@ -185,7 +187,7 @@ runs:
       if: steps.check-history.outputs.can-skip-build != 'true'
       run: |
         # Set the result of the build
-        if [[ "${{ steps.build-project.outputs.build-status }}" == "success" ]]; then 
+        if [[ "${{ steps.check-status.outputs.build-status }}" == "success" ]]; then 
           echo "Build successful"
         else 
           echo "Build failure! Check logs for details"
