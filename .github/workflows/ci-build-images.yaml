@@ -23,8 +23,8 @@ jobs:
       - name: Build all images
         run: scripts/build-all.sh ${{ inputs.version }}
 
-      - name: Push images to image registry
-        run: scripts/publish-all.sh ${{ inputs.version }}
+      # - name: Push images to image registry
+      #   run: scripts/publish-all.sh ${{ inputs.version }}
 
       - name: Login to container image repository
         uses: docker/login-action@v2
